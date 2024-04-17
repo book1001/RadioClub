@@ -29,7 +29,8 @@
 
 
   <!-- Menu: Chat ================================================================== -->
-  <iframe class="menu-chat" src="https://r-club3.glitch.me"></iframe>
+  <iframe class="menu-chat" src="https://r-club5.glitch.me"></iframe>
+  <!-- <iframe class="menu-chat" src="https://r-club3.glitch.me"></iframe> -->
   
 
 
@@ -66,7 +67,7 @@
 
   <!-- Menu: Info ================================================================== -->
   <div class="menu-bottom">
-    <button class="font-menu">
+    <button class="font-menu" onclick="info">
       Communal Radio Club
     </button>
     <button id="playStop" class="font-menu" onclick="playStop()">
@@ -75,6 +76,15 @@
     <button id="radioStationText" class="font-menu" onclick="openDropdown()">Jazz</button>
   </div>
 
+  <!-- <div id="infoContents" class="font-menu" style="z-index:6;">
+    <p>
+      It’s truly wonderful that, amidst this vast expanse of Earth, you and I can come together in the same space and listen to the same music simultaneously. “Communal Radio Club” is a space where visitors can listen to live radio stations. Whenever listeners play the radio, odd random videos are played in a loop. 
+      <br><br>
+      We live in a world where we listen to music of our tastes whenever we want. Through Spotify, YouTube, Apple Music, etc, we pick, play, and skip tracks shortly. Music has truly become one of the most accessible mediums from the evolution of technology.
+      <br><br>
+      Yet, even in this world, radio keeps broadcasting 24/7, crossing borders. Turning on my radio in the small room, I imagine someone living on the other side of the Earth listening to the same music together. The sense of connection is truly exhilarating. In the Community Radio Club, visitors can leave their names on the listener list to mark their presence. Encountering a familiar name upon returning to the site will add an extra layer of excitement to the experience. 
+    </p>
+  </div> -->
 
   <!-- Players ================================================================== -->
   <audio id="radioPlayer0"></audio>
@@ -93,6 +103,7 @@
   
 
   <!-- JS ================================================================== -->
+  <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript" src="radio.js"></script>
  
 </body>
