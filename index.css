@@ -264,6 +264,10 @@ canvas {
   transition: opacity 1s ease;
   z-index:10;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -ms-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
   text-align: justify;
   text-justify: inter-word;
   overflow: auto;
