@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'Menlo';
-  src: url('./font/Menlo-Regular.woff') format('woff');
-  src: url('./font/Menlo-Regular.woff2') format('woff2');
+  src: url('./font/Menlo-Regular_RadioClub.woff') format('woff');
+  src: url('./font/Menlo-Regular_RadioClub.woff2') format('woff2');
 }
 
 @font-face {
@@ -30,7 +30,7 @@
 ::selection {
   color: #000000;
   text-shadow: 0 0px 6px yellow;
-  background: #2d2d2d;
+  background: gray;
   /* color: #ffffff;
   text-shadow: 0 0px 6px blue;
   background: gainsboro; */
@@ -62,20 +62,20 @@
 
 /* default ================================================ */
 a {
-  color: #ffffff;
+  color: yellow;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #000000;
-  text-shadow: 0 0px 6px yellow;
+  color:black;
+  text-shadow: 0 0px 6px gray;
 }
 
 b {
   font-weight: normal;
-  background: #000000;
-  color: #ffffff;
+  /* background: #000000;
+  color: #ffffff; */
 }
-
 
 /* font: menu ================================================ */
 

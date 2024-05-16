@@ -1,6 +1,11 @@
 
 @media only screen and (max-width:600px) {   /* For tablets: */
 
+  p {
+    padding: 10px;
+  }
+
+
   main {
     display: grid;
     place-items: center;
@@ -73,11 +78,11 @@
     left: 50%;
     margin: 0;
     padding: 0;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%); /* Safari */
-    -moz-transform: translate(-50%, -50%); /* Firefox */
-    -ms-transform: translate(-50%, -50%); /* IE 9 */
-    -o-transform: translate(-50%, -50%); /* Opera */
+    transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important; /* Safari */
+    -moz-transform: translate(-50%, -50%) !important; /* Firefox */
+    -ms-transform: translate(-50%, -50%) !important; /* IE 9 */
+    -o-transform: translate(-50%, -50%) !important; /* Opera */
     pointer-events: none;
     object-fit: cover;
     
@@ -87,19 +92,19 @@
   }
 
   
-  .cavas-area {
+  #cavas-area {
     display: block;
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 50%;
-    width: 100%;
+    width: calc(100svw - 20px);
     height: 33svh;
-    aspect-ratio: 1 / 1;
-    transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0); /* Safari */
-    -moz-transform: translate(-50%, 0); /* Firefox */
-    -ms-transform: translate(-50%, 0); /* IE 9 */
-    -o-transform: translate(-50%, 0); /* Opera */
+    aspect-ratio: 3 / 2;
+    transform: translate(-50%, 0) !important;
+    -webkit-transform: translate(-50%, 0) !important; /* Safari */
+    -moz-transform: translate(-50%, 0) !important; /* Firefox */
+    -ms-transform: translate(-50%, 0) !important; /* IE 9 */
+    -o-transform: translate(-50%, 0) !important; /* Opera */
   }
 
 
@@ -114,11 +119,11 @@
     left: 50%;
     margin: 0;
     padding: 0;
-    transform: translate(-50%, 40px);
-    -webkit-transform: translate(-50%, 40px); /* Safari */
-    -moz-transform: translate(-50%, 40px); /* Firefox */
-    -ms-transform: translate(-50%, 40px); /* IE 9 */
-    -o-transform: translate(-50%, 40px); /* Opera */
+    transform: translate(-50%, 30px) !important;
+    -webkit-transform: translate(-50%, 30px) !important; /* Safari */
+    -moz-transform: translate(-50%, 30px) !important; /* Firefox */
+    -ms-transform: translate(-50%, 30px) !important; /* IE 9 */
+    -o-transform: translate(-50%, 30px) !important; /* Opera */
     border: none;
     background: transparent;
     z-index: 5;
@@ -193,6 +198,38 @@
     border: none;
     overflow: hidden;
     mix-blend-mode: difference;
+  }
+
+
+  /* Menu: Info ================================================ */
+  #infoContents {
+    top: 0;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    /* height: 100svh; */
+    max-height: none;
+    /* width: calc(100svw - 60px);
+    max-height: calc(100% - 60px); */
+    /* max-height: calc(100% - 64px); */
+    padding: 0 10px;
+    /* border: 1px solid; */
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  #movingImage {
+    width: 100%;
+    bottom: 20px;
+    left: -500px;
+  }
+  
+  #movingImage2 {
+    width: 100%;
+    right: -500px;
+  }
+
+  #ani-container2 {
+    z-index: 2;
   }
 
 }

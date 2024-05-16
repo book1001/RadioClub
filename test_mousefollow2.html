@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Communal Radio Club</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- css -->
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="index_media.css">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+
+
+<body>
+  <style>
+    #videoTouch{
+      position: fixed; 
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .videoContainer {
+      display: grid;
+      place-items: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 70%;
+      margin: 0;
+      padding: 0;
+      aspect-ratio: 160 / 81;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%); /* Safari */
+      -moz-transform: translate(-50%, -50%); /* Firefox */
+      -ms-transform: translate(-50%, -50%); /* IE 9 */
+      -o-transform: translate(-50%, -50%); /* Opera */
+      /* pointer-events: none; */
+      border: none;
+      pointer-events: none;
+    }
+    #videoPlayer {
+      display: block;
+      position: absolute;
+      width:70%;
+      height:auto;
+      margin: 0;
+      padding: 0;
+      object-fit: cover;
+      &::-webkit-media-controls {
+        display:none !important;
+      }
+      transform-style: preserve-3d;
+    }
+  </style>
+
+  <div id="videoTouch"></div>
+  <div class="videoContainer">
+    <img id="videoPlayer" src="resource_gif/bird2_1.gif">
+  </div>
+
+  <script>
+    let constrain = 300;
+    let mouseOverContainer = document.getElementById("videoTouch");
+    let videoPlayer3D = document.getElementById("videoPlayer");
+
+    function transforms(x, y, el) {
+      let box = el.getBoundingClientRect();
+      let calcX = -(y - box.y - (box.height / 2)) / constrain;
+      let calcY = (x - box.x - (box.width / 2)) / constrain;
+      
+      return "perspective(100px)"
+       + "rotateX("+ calcX +"deg)"
+       + "rotateY("+ calcY +"deg)";
+    };
+
+    function transformElement(el, xyEl) {
+      el.style.transform  = transforms.apply(null, xyEl);
+    }
+
+    mouseOverContainer.onmousemove = function(e) {
+      let xy = [e.clientX, e.clientY];
+      let position = xy.concat([videoPlayer3D]);
+
+      window.requestAnimationFrame(function(){
+        transformElement(videoPlayer3D, position);
+      });
+    };
+  </script>
+
+</body>
+</html>

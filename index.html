@@ -4,6 +4,7 @@
   <title>Communal Radio Club</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link id="favicon" rel="shortcut icon" href="favicon2.png">
 
   <!-- css -->
   <link rel="stylesheet" href="index.css">
@@ -14,18 +15,21 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <!-- p5 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script> -->
 </head>
 
 
 <body>
   <!-- Menu: Random ================================================================== -->
-  <div class="cavas-area">
+  <div id="cavas-area">
     <button id="radioRandomBtn" class="font-menu" style="font-size: 0;" onclick="radioRandomPlay()">
       <img id="radioRandomBtnImg" src="icon/btn.png">
     </button>
+    <button id="exceptBtn" onclick="info()"></button>
   </div>
+
+
 
 
   <!-- Menu: Chat ================================================================== -->
@@ -38,9 +42,12 @@
   <div id="dropdownStation" class="menu-right">
     <button id="row0" class="menu-btn font-category" onclick="radioPlay(0, 'Jazz', 'https://ice7.securenetsystems.net/KCSM2')">
       Jazz
+      <!-- KCSM -->
+      <!-- https://www.kcsm.org -->
     </button>
     <button id="row1" class="menu-btn font-category" onclick="radioPlay(1, 'Indie', 'https://live.radioart.com/fIndie.mp3')">
       Indie
+      <!-- Radio Art -->
       <!-- https://www.radioart.com -->
     </button>
     <button id="row2" class="menu-btn font-category" onclick="radioPlay(2, 'Dance', 'https://myhouseradiofm.out.airtime.pro:8000/myhouseradiofm_a')">
@@ -61,13 +68,15 @@
     </button>
     <button id="row6" class="menu-btn font-category" onclick="radioPlay(6, 'WorldWide FM', 'https://worldwidefm.out.airtime.pro/worldwidefm_a?src=muso.fm')">
       WorldWide FM
+      <!-- WorldWide FM -->
+      <!-- https://worldwidefm.net -->
     </button>
   </div>
 
 
   <!-- Menu: Info ================================================================== -->
   <div class="menu-bottom">
-    <button class="font-menu" onclick="info">
+    <button id="infoMenu" class="font-menu" onclick="info()">
       Communal Radio Club
     </button>
     <button id="playStop" class="font-menu" onclick="playStop()">
@@ -76,15 +85,42 @@
     <button id="radioStationText" class="font-menu" onclick="openDropdown()">Jazz</button>
   </div>
 
-  <!-- <div id="infoContents" class="font-menu" style="z-index:6;">
+  <div id="infoContents" class="font-menu" style="z-index:6;">
     <p>
+      It’s truly wonderful that, amidst this vast expanse of Earth, you and I can come together in the same space and listen to the same music simultaneously. “Communal Radio Club” is a space where visitors can listen to live radio stations. Clicking the blue jog dial <b style="color: blue;">☐</b> in the middle of the screen will play a random radio station with an odd animation. 
+    </p>
+    <p>
+      We live in a world where we listen to music of our tastes whenever we want. Through Spotify, YouTube, Apple Music, etc, we pick, play, and skip tracks shortly. Music has truly become one of the most accessible mediums from the evolution of technology.
+    </p>
+    <p>
+      Yet, even in this world, radio keeps broadcasting 24/7, crossing borders. Turning on my radio in the small room, I imagine someone living on the other side of the Earth listening to the same music together. The sense of connection is truly exhilarating. In the Community Radio Club, you can leave your names on the listener list to mark your presence. Encountering a familiar name upon returning to the site will add an extra layer of excitement to the experience. 
+    </p>
+    <p>
+      This project emerged from the NPC Artist workshop led by <a href="https://johnprovencher.com" target="_blank">John Provencher</a> at the <a href="https://fruitful.school" target="_blank">Fruitful School</a>. Each category of radio is mapped to the following stations, which may be changed periodically: 
+      Jazz (<a href="https://www.kcsm.org" target="_blank">KCSM</a>), 
+      Indie (<a href="https://www.radioart.com" target="_blank">Radio Art</a>), 
+      Dance (<a href="https://www.myhouseradio.fm" target="_blank">My House Radio</a>), 
+      Musical (<a href="https://player.live365.com" target="_blank">Musical Theatre Radio</a>), 
+      Jukebox, 
+      Pop, 
+      Worldwide FM (<a href="https://worldwidefm.net" target="_blank">Worldwide FM</a>).
+    </p>
+    <p>
+      Created by <a href="https://leehalim.com" target="_blank">Halim Lee | leehalim.com</a>
+    </p>
+
+    <!-- <p>
       It’s truly wonderful that, amidst this vast expanse of Earth, you and I can come together in the same space and listen to the same music simultaneously. “Communal Radio Club” is a space where visitors can listen to live radio stations. Whenever listeners play the radio, odd random videos are played in a loop. 
       <br><br>
       We live in a world where we listen to music of our tastes whenever we want. Through Spotify, YouTube, Apple Music, etc, we pick, play, and skip tracks shortly. Music has truly become one of the most accessible mediums from the evolution of technology.
       <br><br>
       Yet, even in this world, radio keeps broadcasting 24/7, crossing borders. Turning on my radio in the small room, I imagine someone living on the other side of the Earth listening to the same music together. The sense of connection is truly exhilarating. In the Community Radio Club, visitors can leave their names on the listener list to mark their presence. Encountering a familiar name upon returning to the site will add an extra layer of excitement to the experience. 
-    </p>
-  </div> -->
+      <br><br>
+      Design by Halim Lee | leehalim.com
+      <br><br>
+      Advised by Fruit School
+    </p> -->
+  </div>
 
   <!-- Players ================================================================== -->
   <audio id="radioPlayer0"></audio>
@@ -101,10 +137,62 @@
     <img id="videoPlayer">
   </div>
   
+  <div id="ani-container">
+    <img id="movingImage">
+  </div>
+
+  <div id="ani-container2">
+    <img id="movingImage2">
+  </div>
+
+  <!-- <style>
+    #randomText{
+      /* display: none; */
+      opacity: 0;
+      position: absolute;
+      transition: opacity 1s ease-out;
+      color: red;
+    }
+  </style>
+  <div id="randomText" class="font-menu"></div> -->
+
 
   <!-- JS ================================================================== -->
-  <script type="text/javascript" src="index.js"></script>
+
   <script type="text/javascript" src="radio.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <!-- <script type="text/javascript" src="info.js"></script> -->
+
+  <!-- <script>
+    let constrain = 300;
+    // let mouseOverContainer = document.getElementById("videoTouch");
+    let mouseOverContainer = document.body;
+    let videoPlayer3D = document.getElementById("videoPlayer");
+
+    function transforms(x, y, el) {
+      let box = el.getBoundingClientRect();
+      let calcX = -(y - box.y - (box.height / 2)) / constrain;
+      let calcY = (x - box.x - (box.width / 2)) / constrain;
+      
+      return "perspective(100px)"
+       + "rotateX("+ calcX +"deg)"
+       + "rotateY("+ calcY +"deg)";
+    };
+
+    function transformElement(el, xyEl) {
+      el.style.transform  = transforms.apply(null, xyEl);
+    }
+
+    mouseOverContainer.onmousemove = function(e) {
+      let xy = [e.clientX, e.clientY];
+      let position = xy.concat([videoPlayer3D]);
+
+      window.requestAnimationFrame(function(){
+        transformElement(videoPlayer3D, position);
+      });
+    };
+  </script> -->
+
  
 </body>
 </html>

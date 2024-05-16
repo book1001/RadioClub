@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Communal Radio Club</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- css -->
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="index_media.css">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- p5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+</head>
+
+
+<body>
+  <style>
+  .container {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 160 / 81;
+    border: none;
+    perspective: 1000px;
+  }
+
+  .box1 {
+    display: block;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); /* Safari */
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -o-transform: translate(-50%, -50%); /* Opera */
+    pointer-events: none;
+    object-fit: cover;
+    
+    &::-webkit-media-controls {
+      display:none !important;
+  }
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) translate(-50%, -50%) translateZ(-50vh);
+
+    border: 2px solid red;
+  }
+
+  .videoContainer {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 160 / 81;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); /* Safari */
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -o-transform: translate(-50%, -50%); /* Opera */
+    pointer-events: none;
+    border: none;
+    perspective: 1000px;
+  }
+
+  .videoPlayer {
+    display: block;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%); /* Safari */
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -o-transform: translate(-50%, -50%); /* Opera */
+    pointer-events: none;
+    object-fit: cover;
+    background:red;
+    
+    &::-webkit-media-controls {
+      display:none !important;
+  }
+    transform-style: preserve-3d;
+    transform: translate(-20%, -50%) rotateY(20deg) translateZ(-50vh);
+  }
+
+  #video3Darea{
+    position: fixed; 
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+  <!-- <div id="ex1" class="container">
+    <div id="ex1-layer" class="box"></div>
+  </div> -->
+
+  <!-- <div id="ex1" class="container">
+    <img id="ex1-layer" class="box" src="resource_info_gif/bird7_1.gif">
+  </div> -->
+
+  <div id="video3Darea"></div>
+  
+  <div class="videoContainer">
+    <img id="videoPlayer1" class="videoPlayer" src="resource_info_gif/bird7_1.gif">
+  </div>
+
+  <!-- <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="radio.js"></script> -->
+  <script>
+    let constrain = 20;
+    let mouseOverContainer = document.getElementById("video3Darea");
+    let videoPlayer1 = document.getElementById("videoPlayer1");
+
+    function transforms(x, y, el) {
+      let box = el.getBoundingClientRect();
+      let calcX = -(y - box.y - (box.height / 2)) / constrain;
+      let calcY = (x - box.x - (box.width / 2)) / constrain;
+      
+      return "rotateX("+ calcX +"deg)"
+        + "rotateY("+ calcY +"deg)"
+        + "translate(-50%, -50%)"
+        + "translateZ(-50vh)";
+    };
+
+    function transformElement(el, xyEl) {
+      el.style.transform  = transforms.apply(null, xyEl);
+    }
+
+    mouseOverContainer.onmousemove = function(e) {
+      let xy = [e.clientX, e.clientY];
+      let position = xy.concat([videoPlayer1]);
+
+      window.requestAnimationFrame(function(){
+        transformElement(videoPlayer1, position);
+      });
+    };
+  </script>
+
+</body>
+</html>

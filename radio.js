@@ -13,77 +13,78 @@ var dropdown = document.getElementById("dropdownStation");
 var button = document.getElementById("playStop");
 
 const videoList = [
-  "resource_gif/bird2_1.gif",
-  "resource_gif/bird2_2.gif",
-  "resource_gif/bird2_3.gif",
-  "resource_gif/bird2_4.gif",
-  "resource_gif/bird2_5.gif",
-  "resource_gif/bird2_6.gif",
-  "resource_gif/bird7_1.gif",
-  "resource_gif/bird7_2.gif",
-  "resource_gif/bird7_3.gif",
-  "resource_gif/bird7_4.gif",
-  "resource_gif/camel1_1.gif",
-  "resource_gif/camel1_2.gif",
-  "resource_gif/camel1_3.gif",
-  "resource_gif/cat2_1.gif",
-  "resource_gif/cat2_2.gif",
-  "resource_gif/cat2_3.gif",
-  "resource_gif/cat2_4.gif",
-  "resource_gif/cat2_5.gif",
-  "resource_gif/crab1_1.gif",
-  "resource_gif/crab1_2.gif",
-  "resource_gif/crab1_3.gif",
-  "resource_gif/crab1_4.gif",
-  "resource_gif/crab2_1.gif",
-  "resource_gif/crab2_2.gif",
-  "resource_gif/crab2_3.gif",
-  "resource_gif/crab2_4.gif",
-  "resource_gif/dance1_1.gif",
-  "resource_gif/dance2_1.gif",
-  "resource_gif/dance2_2.gif",
-  "resource_gif/dance2_3.gif",
-  "resource_gif/dance5_1.gif",
-  "resource_gif/deer2_1.gif",
-  "resource_gif/deer2_2.gif",
-  "resource_gif/deer2_3.gif",
-  "resource_gif/dinosaur1_1.gif",
-  "resource_gif/dinosaur1_2.gif",
-  "resource_gif/dinosaur1_3.gif",
-  "resource_gif/dinosaur1_4.gif",
-  "resource_gif/dragon1_1.gif",
-  "resource_gif/dragon1_2.gif",
-  "resource_gif/dragon1_3.gif",
-  "resource_gif/dragon1_4.gif",
-  "resource_gif/dragon1_5.gif",
-  "resource_gif/dragon1_6.gif",
-  "resource_gif/elephant1_1.gif",
-  "resource_gif/elephant1_2.gif",
-  "resource_gif/elephant1_3.gif",
-  "resource_gif/elephant1_4.gif",
-  "resource_gif/fish1_1.gif",
-  "resource_gif/fish1_2.gif",
-  "resource_gif/fish1_3.gif",
-  "resource_gif/fish1_4.gif",
-  "resource_gif/guitar1_1.gif",
-  "resource_gif/guitar1_2.gif",
-  "resource_gif/guitar1_3.gif",
-  "resource_gif/guitar1_4.gif",
-  "resource_gif/mouse1_1.gif",
-  "resource_gif/mouse1_2.gif",
-  "resource_gif/mouse1_3.gif",
-  "resource_gif/mouse1_4.gif",
-  "resource_gif/walk1_1.gif",
-  "resource_gif/walk1_2.gif",
-  "resource_gif/walk1_3.gif",
-  "resource_gif/walk1_4.gif",
-  "resource_gif/walk2_1.gif",
-  "resource_gif/walk2_2.gif",
-  "resource_gif/walk2_3.gif",
-  "resource_gif/walk2_4.gif",
-  "resource_gif/walk2_5.gif",
-  "resource_gif/walk2_6.gif",
+  { src: "resource_gif/bird2_1.gif", fav: "resource_favicon/bird2_1.png" },
+  { src: "resource_gif/bird2_2.gif", fav: "resource_favicon/bird2_2.png" },
+  { src: "resource_gif/bird2_3.gif", fav: "resource_favicon/bird2_3.png" },
+  { src: "resource_gif/bird2_4.gif", fav: "resource_favicon/bird2_4.png" },
+  { src: "resource_gif/bird2_5.gif", fav: "resource_favicon/bird2_5.png" },
+  { src: "resource_gif/bird2_6.gif", fav: "resource_favicon/bird2_6.png" },
+  { src: "resource_gif/bird7_1.gif", fav: "resource_favicon/bird7_1.png" },
+  { src: "resource_gif/bird7_2.gif", fav: "resource_favicon/bird7_2.png" },
+  { src: "resource_gif/bird7_3.gif", fav: "resource_favicon/bird7_3.png" },
+  { src: "resource_gif/bird7_4.gif", fav: "resource_favicon/bird7_4.png" },
+  { src: "resource_gif/camel1_1.gif", fav: "resource_favicon/camel1_1.png" },
+  { src: "resource_gif/camel1_2.gif", fav: "resource_favicon/camel1_2.png" },
+  { src: "resource_gif/camel1_3.gif", fav: "resource_favicon/camel1_3.png" },
+  { src: "resource_gif/cat2_1.gif", fav: "resource_favicon/cat2_1.png" },
+  { src: "resource_gif/cat2_2.gif", fav: "resource_favicon/cat2_2.png" },
+  { src: "resource_gif/cat2_3.gif", fav: "resource_favicon/cat2_3.png" },
+  { src: "resource_gif/cat2_4.gif", fav: "resource_favicon/cat2_4.png" },
+  { src: "resource_gif/cat2_5.gif", fav: "resource_favicon/cat2_5.png" },
+  { src: "resource_gif/crab1_1.gif", fav: "resource_favicon/crab1_1.png" },
+  { src: "resource_gif/crab1_2.gif", fav: "resource_favicon/crab1_2.png" },
+  { src: "resource_gif/crab1_3.gif", fav: "resource_favicon/crab1_3.png" },
+  { src: "resource_gif/crab1_4.gif", fav: "resource_favicon/crab1_4.png" },
+  { src: "resource_gif/crab2_1.gif", fav: "resource_favicon/crab2_1.png" },
+  { src: "resource_gif/crab2_2.gif", fav: "resource_favicon/crab2_2.png" },
+  { src: "resource_gif/crab2_3.gif", fav: "resource_favicon/crab2_3.png" },
+  { src: "resource_gif/crab2_4.gif", fav: "resource_favicon/crab2_4.png" },
+  { src: "resource_gif/dance1_1.gif", fav: "resource_favicon/dance1_1.png" },
+  { src: "resource_gif/dance2_1.gif", fav: "resource_favicon/dance2_1.png" },
+  { src: "resource_gif/dance2_2.gif", fav: "resource_favicon/dance2_2.png" },
+  { src: "resource_gif/dance2_3.gif", fav: "resource_favicon/dance2_3.png" },
+  { src: "resource_gif/dance5_1.gif", fav: "resource_favicon/dance5_1.png" },
+  { src: "resource_gif/deer2_1.gif", fav: "resource_favicon/deer2_1.png" },
+  { src: "resource_gif/deer2_2.gif", fav: "resource_favicon/deer2_2.png" },
+  { src: "resource_gif/deer2_3.gif", fav: "resource_favicon/deer2_3.png" },
+  { src: "resource_gif/dinosaur1_1.gif", fav: "resource_favicon/dinosaur1_1.png" },
+  { src: "resource_gif/dinosaur1_2.gif", fav: "resource_favicon/dinosaur1_2.png" },
+  { src: "resource_gif/dinosaur1_3.gif", fav: "resource_favicon/dinosaur1_3.png" },
+  { src: "resource_gif/dinosaur1_4.gif", fav: "resource_favicon/dinosaur1_4.png" },
+  { src: "resource_gif/dragon1_1.gif", fav: "resource_favicon/dragon1_1.png" },
+  { src: "resource_gif/dragon1_2.gif", fav: "resource_favicon/dragon1_2.png" },
+  { src: "resource_gif/dragon1_3.gif", fav: "resource_favicon/dragon1_3.png" },
+  { src: "resource_gif/dragon1_4.gif", fav: "resource_favicon/dragon1_4.png" },
+  { src: "resource_gif/dragon1_5.gif", fav: "resource_favicon/dragon1_5.png" },
+  { src: "resource_gif/dragon1_6.gif", fav: "resource_favicon/dragon1_6.png" },
+  { src: "resource_gif/elephant1_1.gif", fav: "resource_favicon/elephant1_1.png" },
+  { src: "resource_gif/elephant1_2.gif", fav: "resource_favicon/elephant1_2.png" },
+  { src: "resource_gif/elephant1_3.gif", fav: "resource_favicon/elephant1_3.png" },
+  { src: "resource_gif/elephant1_4.gif", fav: "resource_favicon/elephant1_4.png" },
+  { src: "resource_gif/fish1_1.gif", fav: "resource_favicon/fish1_1.png" },
+  { src: "resource_gif/fish1_2.gif", fav: "resource_favicon/fish1_2.png" },
+  { src: "resource_gif/fish1_3.gif", fav: "resource_favicon/fish1_3.png" },
+  { src: "resource_gif/fish1_4.gif", fav: "resource_favicon/fish1_4.png" },
+  { src: "resource_gif/guitar1_1.gif", fav: "resource_favicon/guitar1_1.png" },
+  { src: "resource_gif/guitar1_2.gif", fav: "resource_favicon/guitar1_2.png" },
+  { src: "resource_gif/guitar1_3.gif", fav: "resource_favicon/guitar1_3.png" },
+  { src: "resource_gif/guitar1_4.gif", fav: "resource_favicon/guitar1_4.png" },
+  { src: "resource_gif/mouse1_1.gif", fav: "resource_favicon/mouse1_1.png" },
+  { src: "resource_gif/mouse1_2.gif", fav: "resource_favicon/mouse1_2.png" },
+  { src: "resource_gif/mouse1_3.gif", fav: "resource_favicon/mouse1_3.png" },
+  { src: "resource_gif/mouse1_4.gif", fav: "resource_favicon/mouse1_4.png" },
+  { src: "resource_gif/walk1_1.gif", fav: "resource_favicon/walk1_1.png" },
+  { src: "resource_gif/walk1_2.gif", fav: "resource_favicon/walk1_2.png" },
+  { src: "resource_gif/walk1_3.gif", fav: "resource_favicon/walk1_3.png" },
+  { src: "resource_gif/walk1_4.gif", fav: "resource_favicon/walk1_4.png" },
+  { src: "resource_gif/walk2_1.gif", fav: "resource_favicon/walk2_1.png" },
+  { src: "resource_gif/walk2_2.gif", fav: "resource_favicon/walk2_2.png" },
+  { src: "resource_gif/walk2_3.gif", fav: "resource_favicon/walk2_3.png" },
+  { src: "resource_gif/walk2_4.gif", fav: "resource_favicon/walk2_4.png" },
+  { src: "resource_gif/walk2_5.gif", fav: "resource_favicon/walk2_5.png" },
+  { src: "resource_gif/walk2_6.gif", fav: "resource_favicon/walk2_6.png" }
 ];
+
 
 let videoLast = -1;
 
@@ -91,8 +92,10 @@ var videoPlayer = document.getElementById('videoPlayer');
 var videoRandom = getRandomItem(videoLast, videoList.length);
 videoLast = videoRandom;
 var videoSelected = videoList[videoRandom];
-videoPlayer.src = videoSelected;
+videoPlayer.src = videoSelected.src;
 
+const favicon = document.getElementById("favicon");
+favicon.setAttribute("href", videoSelected.fav);
 
 
 function onAudioLoading(currentRow) {
@@ -130,8 +133,10 @@ function onAudioPlaying(currentRow) {
   var videoRandom = getRandomItem(videoLast, videoList.length);
   videoLast = videoRandom;
   var videoSelected = videoList[videoRandom];
-  videoPlayer.src = videoSelected;
+  videoPlayer.src = videoSelected.src;
 
+  const favicon = document.getElementById("favicon");
+  favicon.setAttribute("href", videoSelected.fav);
 }
 
 function radioPlay(index, text, url) {
@@ -197,6 +202,13 @@ function radioRandomPlay() {
   buttons[randomIndex].click();
 }
 
+function randomImage() {
+  var videoPlayer = document.getElementById('videoPlayer');
+  var videoRandom = getRandomItem(videoLast, videoList.length);
+  videoLast = videoRandom;
+  var videoSelected = videoList[videoRandom];
+  videoPlayer.src = videoSelected.src;
+}
 
 // 중복 선택을 방지하기 위한 함수
 function getRandomItem(itemLast, listLength) {
