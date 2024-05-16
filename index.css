@@ -220,6 +220,10 @@ canvas {
   /* mix-blend-mode: difference; */
 }
 
+#dropdownStation {
+  display: block;
+}
+
 #playStop {
   display: none;
 }

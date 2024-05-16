@@ -153,6 +153,15 @@ function info() {
   }
 }
 
+function infoImage() {
+  var tabletStyle = window.matchMedia("(max-width: 600px)");
+  if (tabletStyle.matches) { // ~ Tablet: 600px
+    radioRandomPlay()
+  } else { // PC: 601px ~
+    info_PC()
+  }
+}
+
 let infoClicked = false;
 let infoMenu = document.getElementById("infoMenu");
 
@@ -346,5 +355,6 @@ window.onresize = function(event) {
 
   } else { // PC: 601px ~
     infoMenu.textContent = "Communal Radio Club";
+    document.getElementById("dropdownStation").style.display = 'block';
   }
 };
