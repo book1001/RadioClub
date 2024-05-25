@@ -194,7 +194,7 @@
     left: 10px;
     width: calc(100svw - 20px);
     /* height: 100svh; */
-    height: calc(100svh - 10px);
+    height: calc(100% - 10px);
     border: none;
     overflow: hidden;
     mix-blend-mode: difference;
