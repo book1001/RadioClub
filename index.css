@@ -71,7 +71,8 @@ canvas {
 /* Video ================================================ */
 
 .videoContainer {
-  display: grid;
+  display: block;
+  /* display: grid; */
   place-items: center;
   position: fixed;
   top: 50%;
