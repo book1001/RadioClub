@@ -12,6 +12,12 @@ const buttons = Array.from(buttonElements);
 var dropdown = document.getElementById("dropdownStation");
 var button = document.getElementById("playStop");
 
+// Demo
+// const videoList = [
+//   { src: "resource_gif/fish1_4.gif", fav: "resource_favicon/fish1_4.png" },
+//   { src: "resource_gif/dance1_1.gif", fav: "resource_favicon/dance1_1.png" }
+// ];
+
 const videoList = [
   { src: "resource_gif/bird2_1.gif", fav: "resource_favicon/bird2_1.png" },
   { src: "resource_gif/bird2_2.gif", fav: "resource_favicon/bird2_2.png" },

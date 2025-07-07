@@ -1,3 +1,9 @@
+// Demo
+// const videoWalkingList = [
+//   "resource_info_gif/crab1_2.gif",
+//   "resource_info_gif/crab1_2.gif"
+// ];
+
 const videoWalkingList = [
   "resource_info_gif/bird7_1.gif",
   "resource_info_gif/camel1_1.gif",
